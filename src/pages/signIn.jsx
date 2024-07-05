@@ -127,10 +127,12 @@ const SignInForm = () => {
             <p>Get a 10% discount for new customer</p>
           </div>
 
-          <Button
-            className="w-full border border-[black] p-3"
-            name="CREATE AN ACCOUNT"
-          />
+          <Link to="/createAccount">
+            <Button
+              className="w-full border border-[black] p-3"
+              name="CREATE AN ACCOUNT"
+            />
+          </Link>
         </div>
       </div>
     </section>
