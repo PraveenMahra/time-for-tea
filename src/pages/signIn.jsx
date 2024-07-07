@@ -103,7 +103,7 @@ const SignInForm = () => {
               </label>
             </div>
 
-            <Link to="/"> Forget password? </Link>
+            <Link to="/forgetPassword"> Forget password? </Link>
           </div>
 
           <Button className="w-full" type="primary" name="SIGN IN" />

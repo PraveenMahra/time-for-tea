@@ -3,6 +3,7 @@ import Homepage from "./pages/homepage";
 import Collection from "./pages/collection/collection";
 import User from "./pages/user";
 import CreateAccountForm from "./pages/createAccount";
+import ForgetPasswordForm from "./pages/resetPassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="cart" element="cart" />
         <Route path="search" element="searchbar" />
         <Route path="createAccount" element={<CreateAccountForm />} />
+        <Route path="forgetPassword" element={<ForgetPasswordForm />} />
       </Routes>
     </BrowserRouter>
   );
