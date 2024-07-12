@@ -4,9 +4,9 @@ import { ProductData } from "./productData";
 function ProductList() {
   return (
     <div className="mt-10 grid grid-cols-3 gap-5 place-items-center text-center">
-      {ProductData.map((item, index) => (
+      {ProductData.map((item) => (
         <Link
-          key={index}
+          key={item.id}
           to={`/collection/productinfo/${item.id}`}
           className="hover:underline cursor-pointer"
         >
@@ -14,13 +14,14 @@ function ProductList() {
             <img
               className="transition-all duration-300 hover:scale-110"
               src={item.image}
-              alt="img"
+              alt="Product"
             />
           </div>
           <p className="text-sm mt-1 capitalize">{item.name}</p>
-          <p className="text-sm mt-1 capitalize">{item.lastName}</p>
+          <p className="text-sm mt-1 capitalize">{item.description}</p>
           <p className="text-sm mt-1 capitalize">
-            {item.currency + item.rate + "/" + item.weight}
+            {item.currency} {item.variants[0].price.toFixed(2)} /{" "}
+            {item.variants[0].weight}
           </p>
         </Link>
       ))}

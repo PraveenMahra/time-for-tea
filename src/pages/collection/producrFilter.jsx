@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import ProductData from "./productList";
 import { FaMinus, FaPlus, FaToggleOff, FaToggleOn } from "react-icons/fa";
+import ProductList from "./productList";
 
 // Reusable Checkbox Component
 const Checkbox = ({ id, label }) => (
@@ -208,7 +208,7 @@ const ProductFilters = () => {
           </label>
         </div>
         <div className="rate-list" id="rate-list">
-          <ProductData />
+          <ProductList />
         </div>
       </div>
     </section>
