@@ -1,21 +1,22 @@
+import { FaCoffee, FaGift, FaShippingFast, FaTag } from "react-icons/fa";
 import Button from "../button/button";
 
 function Features() {
   const list = [
     {
-      icon: "fa-solid fa-mug-saucer",
+      icon: <FaCoffee />,
       text: " 450+ KIND OF LOOSEF TEA",
     },
     {
-      icon: "fa-solid fa-gift",
+      icon: <FaGift />,
       text: "CERTIFICATED ORGANIC TEAS",
     },
     {
-      icon: "fa-solid fa-truck",
+      icon: <FaShippingFast />,
       text: " FREE DELIVERY",
     },
     {
-      icon: "fa-solid fa-tag",
+      icon: <FaTag />,
       text: "SAMPLE FOR ALL TEAS",
     },
   ];
@@ -28,7 +29,7 @@ function Features() {
             key={index}
             className="flex gap-4 items-center hover:underline cursor-pointer"
           >
-            <i className={item.icon}></i>
+            {item.icon}
             <a href="#" className="text-sm">
               {item.text}
             </a>
