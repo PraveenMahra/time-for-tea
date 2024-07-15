@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/button/button";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
 
 function Cart() {
-  // Retrieve the cart state from local storage or initialize as an empty array
+  const navigate = useNavigate();
+
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
   );
 
-  // Update local storage whenever the cart state changes
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Function to remove an item from the cart
   const handleRemoveFromCart = (productId, variantId) => {
     const updatedCart = cart.filter(
       (item) =>
@@ -24,7 +23,6 @@ function Cart() {
     setCart(updatedCart);
   };
 
-  // Function to update the quantity of a product
   const handleQuantityChange = (productId, variantId, quantity) => {
     const updatedCart = cart.map((item) => {
       if (item.id === productId && item.selectedVariant.id === variantId) {
@@ -35,13 +33,27 @@ function Cart() {
     setCart(updatedCart);
   };
 
-  // Function to calculate the total price of the cart
   const calculateTotalPrice = () => {
     return cart.reduce(
       (total, item) =>
         total + item.selectedVariant.price * (item.quantity || 1),
       0
     );
+  };
+
+  const handleCheckout = () => {
+    // Simulate order data and delivery date
+    const orderData = cart;
+    const deliveryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    const formattedDeliveryDate = deliveryDate.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    // Navigate to Success component with order data and delivery date
+    navigate("/success", { state: { orderData, formattedDeliveryDate } });
   };
 
   return (
@@ -119,7 +131,7 @@ function Cart() {
               <Button
                 type="primary"
                 name="Proceed to Checkout"
-                onClick={() => alert("Proceeding to checkout...")}
+                onClick={handleCheckout}
               />
             </div>
           </>
