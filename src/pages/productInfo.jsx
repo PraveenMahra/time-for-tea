@@ -71,9 +71,9 @@ function ProductInfo() {
 
       <div className="flex flex-col items-center gap-20 mt-10">
         {/* Product details */}
-        <div className="flex items-center gap-20 mt-4">
+        <div className="flex flex-col lg:flex-row items-center gap-20 mt-4">
           <img src={product.image} alt="Product" />
-          <div className="font-semibold text-lg">
+          <div className="font-semibold text-center lg:text-left text-lg">
             <h2>
               {product.name} {product.lastName}
             </h2>
@@ -82,13 +82,13 @@ function ProductInfo() {
               {product.currency} {selectedVariant.price.toFixed(2)}
             </p>
             {/* Bag images section */}
-            <div className="flex gap-4 my-6">
+            <div className="flex flex-col items-center lg:items-start lg:flex-row gap-4 my-6">
               {product.variants.map((variant) => (
                 <img
                   key={variant.id}
                   src={variant.image}
                   alt={`Bag ${variant.weight}`}
-                  className={`cursor-pointer ${
+                  className={`cursor-pointer w-[50px] lg:w-auto ${
                     selectedVariant.id === variant.id
                       ? "border-2 border-blue-500"
                       : ""
@@ -106,7 +106,7 @@ function ProductInfo() {
           <h3 className="mb-3 text-lg font-bold text-center">
             You May Also Like
           </h3>
-          <div className="flex space-x-4">
+          <div className="flex flex-col sm:flex-row space-x-4">
             {relatedProducts.map((item) => (
               <Link
                 key={item.id}
