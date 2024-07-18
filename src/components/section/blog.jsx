@@ -21,9 +21,9 @@ function Blog() {
         <h2 className="text-center mb-8 text-xl font-semibold">
           Last Blog Posts
         </h2>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           {list.map((item, index) => (
-            <div key={index} className="flex gap-4">
+            <div key={index} className="flex flex-col xl:flex-row gap-4">
               <img src={item.img} alt="img" />
               <div>
                 <h2 className="font-semibold text-sm mb-2">{item.heading}</h2>
