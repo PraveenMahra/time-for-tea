@@ -4,7 +4,7 @@ import Button from "../button/button";
 
 function Wholesale() {
   return (
-    <div className="flex items-center mt-12 p-8">
+    <div className="flex flex-col-reverse sm:flex-row items-center mt-12 p-8">
       <div>
         <h2 className="font-semibold">FOR WHOLESALERS</h2>
 
