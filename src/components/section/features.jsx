@@ -23,7 +23,7 @@ function Features() {
 
   return (
     <div className="bg-[#f4f4f4] mt-10 p-10">
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row  justify-center items-center gap-8">
         {list.map((item, index) => (
           <div
             key={index}
