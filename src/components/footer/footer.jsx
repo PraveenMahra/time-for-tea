@@ -3,7 +3,7 @@ import { footerLinks } from "./footerLinksData";
 
 function Footer() {
   return (
-    <footer className="bg-[#f4f4f4] p-12 mt-12 flex justify-around text-sm">
+    <footer className="bg-[#f4f4f4] p-12 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-10 place-items-center sm:place-items-start lg:flex justify-around text-sm">
       {footerLinks.map((section, index) => (
         <div key={index}>
           <h2 className="uppercase font-semibold mb-2">{section.heading}</h2>
