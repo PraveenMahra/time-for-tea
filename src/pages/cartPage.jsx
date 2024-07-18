@@ -71,7 +71,7 @@ function Cart() {
               {cart.map((item) => (
                 <div
                   key={item.id + item.selectedVariant.id}
-                  className="flex items-center justify-between border-b py-4"
+                  className="flex flex-col sm:flex-row items-center justify-between border-b py-4"
                 >
                   <img
                     src={item.image}
