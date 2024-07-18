@@ -15,7 +15,7 @@ export function PageNotFound() {
           <div className="flex flex-col items-center justify-center gap-5 sm:flex-row sm:items-start">
             <img src={WarningIcon} className="h-20 w-20 sm:h-12 sm:w-12" />
 
-            <h1 className="text-5xl font-bold leading-none ">
+            <h1 className="text-5xl text-gray-900 font-bold leading-none ">
               There's been a glitch...
             </h1>
           </div>
