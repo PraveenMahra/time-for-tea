@@ -3,7 +3,7 @@ import { ProductData } from "./productData";
 
 function ProductList() {
   return (
-    <div className="mt-10 grid grid-cols-3 gap-5 place-items-center text-center">
+    <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center text-center">
       {ProductData.map((item) => (
         <Link
           key={item.id}

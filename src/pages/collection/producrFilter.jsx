@@ -26,19 +26,19 @@ const FilterSection = ({
   return (
     <div>
       <h2
-        className="text-sm font-semibold cursor-pointer"
+        className="text-sm font-semibold relative cursor-pointer"
         onClick={() => toggleDetails(sectionKey)}
       >
         {title}
         <span
-          className={`absolute left-64 cursor-pointer ${
+          className={`absolute left-40 lg:left-40 sm:left-64 cursor-pointer ${
             isExpanded ? "hidden" : ""
           }`}
         >
           <FaPlus />
         </span>
         <span
-          className={`absolute left-64 cursor-pointer ${
+          className={`absolute lg:left-40 left-40 sm:left-64 cursor-pointer ${
             isExpanded ? "" : "hidden"
           }`}
         >
@@ -128,7 +128,7 @@ const ProductFilters = () => {
   };
 
   return (
-    <section className="flex justify-around mt-10">
+    <section className="flex lg:flex-row flex-col items-center lg:items-start lg:justify-around mt-10">
       <div className="ml-6">
         {/* Filter sections */}
         <FilterSection
