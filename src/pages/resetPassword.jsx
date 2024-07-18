@@ -6,7 +6,7 @@ import Navbar from "../components/navbar/navbar";
 
 const ForgetPasswordForm = () => {
   const heading = "text-xl text-center font-semibold mb-6";
-  const input = "p-2 outline-none mb-8 w-[350px]";
+  const input = "p-2 outline-none mb-8 w-full sm:w-[350px]";
   const form = "bg-[#f4f4f4] p-12 flex flex-col";
 
   const [formData, setFormData] = useState({

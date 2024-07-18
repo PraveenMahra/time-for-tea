@@ -5,7 +5,7 @@ import Footer from "../components/footer/footer";
 
 const CreateAccountForm = () => {
   const divFlex = "flex flex-col my-4";
-  const input = "p-2 w-[350px] border";
+  const input = "p-2 w-full sm:w-[350px] border";
 
   const [formData, setFormData] = useState({
     name: "",

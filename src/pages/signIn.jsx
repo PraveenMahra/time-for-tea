@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import Button from "../components/button/button";
 
 const SignInForm = () => {
-  const formDiv = "flex gap-5 bg-[#fff] border border-[#282828] my-6 px-2";
-  const input = "p-2 outline-none";
+  const formDiv = "flex  gap-5 bg-[#fff] border border-[#282828] my-6 px-2";
+  const input = "p-2 w-full outline-none";
 
   const [formData, setFormData] = useState({
     email: "",
@@ -54,8 +54,8 @@ const SignInForm = () => {
   };
 
   return (
-    <section className="flex justify-center my-8 gap-10">
-      <div className="bg-[#f4f4f4] p-12">
+    <section className="flex flex-col lg:flex-row sm:items-center lg:items-start justify-center my-8 gap-10">
+      <div className="bg-[#f4f4f4] p-12 sm:w-[400px] lg:w-auto">
         <h2 className="text-xl mb-5 font-medium">Already a customer?</h2>
         <p>Welcome back! Sign in for faster checkout.</p>
 
@@ -89,7 +89,7 @@ const SignInForm = () => {
             />
           </div>
 
-          <div className="flex justify-between text-sm">
+          <div className="flex flex-col sm:flex-row justify-between text-sm">
             <div className="flex gap-2 mb-5">
               <input
                 className="cursor-pointer"
@@ -103,7 +103,9 @@ const SignInForm = () => {
               </label>
             </div>
 
-            <Link to="/forgetPassword"> Forget password? </Link>
+            <Link to="/forgetPassword" className="mb-5 sm:mb-0">
+              Forget password?
+            </Link>
           </div>
 
           <Button className="w-full" type="primary" name="SIGN IN" />
@@ -111,7 +113,7 @@ const SignInForm = () => {
       </div>
 
       <div>
-        <div className="bg-[#f4f4f4] p-12">
+        <div className="bg-[#f4f4f4] p-12 sm:w-[400px] lg:w-auto">
           <h2 className="font-medium text-xl mb-5">New to our company?</h2>
           <p className="mb-4">Create an account for the best experience</p>
           <div className="flex items-center gap-4 my-4">
